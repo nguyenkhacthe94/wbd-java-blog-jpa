@@ -36,7 +36,7 @@ public class BlogController {
 
     @GetMapping("/blogs")
     public ModelAndView listBlogs() {
-        List<Blog> blogs = blogService.findAll();
+        Iterable<Blog> blogs = blogService.findAll();
         ModelAndView modelAndView = new ModelAndView("/blog/list");
         modelAndView.addObject("blogs", blogs);
         return modelAndView;

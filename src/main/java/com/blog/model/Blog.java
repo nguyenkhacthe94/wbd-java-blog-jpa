@@ -1,10 +1,26 @@
 package com.blog.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class Blog {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String title;
     private String summary;
     private String content;
+    private  String category;
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     public Blog() {
     }
@@ -46,11 +62,12 @@ public class Blog {
         this.content = content;
     }
 
-    public Blog(Long id, String title, String summary, String content) {
+    public Blog(Long id, String title, String summary, String content, String category) {
         this.id = id;
         this.title = title;
         this.summary = summary;
         this.content = content;
+        this.category = category;
     }
 
 
